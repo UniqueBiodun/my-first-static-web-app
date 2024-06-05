@@ -1,20 +1,20 @@
 "use client";
 import Image from "next/image";
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Home() {
-	// const [data, setData] = useState("");
+	const [data, setData] = useState("");
 
-	// useEffect(() => {
-	// 	(async function () {
-	// 		const { text } = await (await fetch(`/api/message`)).json();
-	// 		setData(text);
-	// 	})();
-	// });
+	useEffect(() => {
+		(async function () {
+			const { text } = await (await fetch(`/api/message`)).json();
+			setData(text);
+		})();
+	});
 
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24 bg-red-400">
-			{/* <div className="bg-black">{data}</div> */}
+			<div className="bg-black">{data}</div>
 			<Image
 				src={"/images/no-data.jpg"}
 				alt="No-data"
